@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Sania 💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    animation: glow 2s infinite alternate, zoom 10s infinite alternate;
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px #ff69b4; }
+    to { box-shadow: 0 0 40px #fff; }
+  }
+
+  @keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(255,255,255,0.5);
+  }
+
+  #message {
+    font-size: 1.2em;
+    margin-top: 20px;
+    display: inline-block;
+    width: 80%;
+    line-height: 1.6;
+  }
+
+  .heart {
+    position: fixed;
+    color: #ffdde1;
+    font-size: 18px;
+    animation: fall linear;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="C:\Users\Ayush Datta\OneDrive\Documents\Desktop\BirthdaySania\sania.jpg">
+    <h1>🎉 Happy Birthday Sania 💖</h1>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    // Typewriter effect
+    const text = "You are the most beautiful part of my life, Sania ❤️ Every moment with you feels magical. Wishing you a birthday filled with love, joy, and everything you deserve. 💐your omanush is always there for you,always ready to handle your sadness always to cheer you up and always to make you feel happy and proud.Your baccha is trying to give all the happiness you want🥹❤";
+    const messageEl = document.getElementById("message");
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        messageEl.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+
+    // Falling hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 5000);
+    }
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
